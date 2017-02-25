@@ -1,5 +1,5 @@
 """
-MIMIC-II NoteEvents table -2- txt file containing all note events
+MIMIC-III NoteEvents table -2- txt file containing all note events
 
 Read in source documents from mimic.csv.gz NOTEEVENTS table, writes all clinical notes into a single file.
 Assumes that column 10 in the csv.gz file is the "Notes" column. This is currently the case for the MIMIC-III
