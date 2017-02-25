@@ -21,15 +21,19 @@ def main():
     # check and process input arguments
 
     input = "/home/wlane/PycharmProjects/word2vec/Resources/Training_Input"
-    output = "/home/wlane/PycharmProjects/word2vec/Resources/Training_Output/fh12k.word2vec.model"
+    output = "/home/wlane/PycharmProjects/word2vec/Resources/Training_Output/mimic_fh12k.word2vec.model.txt"
 
     sentences = MySentences(input)  # a memory-friendly iterator
-    model = Word2Vec(sentences, size=300, window=5, min_count=10, workers=multiprocessing.cpu_count())
+    model = Word2Vec(sentences, size=300, window=5, min_count=10, sg=1, workers=multiprocessing.cpu_count())
 
     # trim unneeded model memory = use (much) less RAM
     model.init_sims(replace=True)
 
+    # save binary model format
     model.save(output)
+
+    #save txt readable model format
+    #model.save_word2vec_format(output, binary=False)
 
 
 class MySentences(object):
