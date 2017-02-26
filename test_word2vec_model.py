@@ -11,12 +11,11 @@ print model.most_similar('dx', topn=5)
 print model.most_similar('status', topn=5)
 print model.most_similar('pt', topn=5)
 print model.most_similar('rn', topn=5)
-print model.most_similar('nsclc', topn=5)
+print model.most_similar('nsclc', topn=15)
 print model.most_similar('lung', topn=5)
 print model.most_similar('breakfast', topn=5)
 #One of these things is not like the other:
 print model.doesnt_match("breakfast cereal dinner lunch".split())
 # Similarity score between two terms:
 print model.similarity('tylenol', 'ibuprofen')
-
 
