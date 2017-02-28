@@ -1,7 +1,7 @@
 import gensim
 from gensim.models import Word2Vec
 
-model = gensim.models.Word2Vec.load('/home/wlane/PycharmProjects/word2vec/Resources/Training_Output/mimic_fh12k.word2vec.model')
+model = gensim.models.Word2Vec.load('/home/wlane/PycharmProjects/word2vec/Resources/Training_Output/mimic_fh12k.word2vec.400.sg.u.model.bin')
 print model.most_similar('ppd', topn=5)
 print model.most_similar('pack-years', topn=5)
 print model.most_similar('tob', topn=5)
